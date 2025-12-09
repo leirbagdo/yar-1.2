@@ -1,0 +1,447 @@
+/* ========= VARIÁVEIS ESPECÍFICAS DO MARANHÃO ========= */
+:root {
+    --verde-floresta: #064e3b;
+    --terra: #8d6e63;
+    --areia: #d7ccc8;
+    --accent: #ffd54f;
+    --glass-bg: rgba(255, 255, 255, 0.14);
+    --glass-border: rgba(255, 255, 255, 0.25);
+    --text: #fdfdfd;
+    
+    /* Cores das regiões do MA */
+    --norte-ma: #27ae60;      /* Verde - Norte */
+    --oeste-ma: #e74c3c;      /* Vermelho - Oeste */
+    --centro-ma: #f39c12;     /* Laranja - Centro */
+    --leste-ma: #3498db;      /* Azul - Leste */
+    --sul-ma: #9b59b6;        /* Roxo - Sul */
+    
+    /* Cores do Maranhão */
+    --azul-ma: #0066cc;       /* Azul da bandeira */
+    --branco-ma: #ffffff;      /* Branco da bandeira */
+    --vermelho-ma: #cc0000;    /* Vermelho da bandeira */
+}
+
+/* ========= HERO ESPECÍFICO DO MARANHÃO ========= */
+.hero-ma {
+    position: relative;
+    min-height: 60vh;
+    margin: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 20px;
+    margin-bottom: 24px;
+}
+
+.hero-bg-ma {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(6, 78, 59, 0.8), rgba(141, 110, 99, 0.7)),
+                url('imagens/background-ma.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(3px) saturate(1.2) brightness(0.7);
+    transform: scale(1.05);
+}
+
+.state-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    margin-bottom: 20px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.state-badge i {
+    color: var(--accent);
+}
+
+.state-badge span {
+    font-weight: 600;
+    color: white;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 16px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-outline:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* ========= CONTAINER DO MARANHÃO ========= */
+.container-ma {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 0 12px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+    .container-ma {
+        grid-template-columns: 2fr 1fr;
+    }
+    
+    .map-section {
+        grid-column: 1;
+    }
+    
+    .panel-section {
+        grid-column: 2;
+    }
+    
+    .featured-peoples {
+        grid-column: 1 / -1;
+    }
+}
+
+/* ========= BARRA DE INFORMAÇÕES DO MAPA ========= */
+.map-info-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 16px;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    border-left: 4px solid var(--accent);
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.info-item i {
+    color: var(--accent);
+}
+
+/* ========= MAPA DO MARANHÃO ========= */
+.map-container-ma {
+    padding: 20px;
+    height: 100%;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.mapa-maranhao {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* ========= REGIÕES DO MAPA MA ========= */
+.region {
+    fill-opacity: 0.7;
+    stroke: rgba(255, 255, 255, 0.9);
+    stroke-width: 2;
+    stroke-linejoin: round;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.region:hover {
+    fill-opacity: 0.9;
+    stroke-width: 3;
+    filter: brightness(1.2) drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
+}
+
+/* Cores específicas das regiões do MA */
+.norte-ma { fill: var(--norte-ma); }
+.oeste-ma { fill: var(--oeste-ma); }
+.centro-ma { fill: var(--centro-ma); }
+.leste-ma { fill: var(--leste-ma); }
+.sul-ma { fill: var(--sul-ma); }
+
+.region-label {
+    fill: white;
+    font-weight: 600;
+    font-size: 14px;
+    pointer-events: none;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* ========= CONTROLES DO MAPA ========= */
+.map-controls {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 10;
+}
+
+.map-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(6, 78, 59, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.map-btn:hover {
+    background: rgba(6, 78, 59, 0.95);
+    transform: scale(1.1);
+}
+
+/* ========= LEGENDA DO MAPA MA ========= */
+.legend-count {
+    font-size: 0.8rem;
+    opacity: 0.8;
+    margin-left: auto;
+}
+
+/* ========= PANEL ESPECÍFICO DO MA ========= */
+.state-flag {
+    width: 80px;
+    height: 60px;
+    margin: 0 auto 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.state-flag img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.quick-facts {
+    background: rgba(255, 213, 79, 0.1);
+    padding: 16px;
+    border-radius: 12px;
+    margin-top: 20px;
+    border-left: 4px solid var(--accent);
+}
+
+.quick-facts h5 {
+    color: var(--accent);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.quick-facts ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.quick-facts li {
+    padding: 6px 0;
+    color: var(--text);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.95rem;
+}
+
+.quick-facts li strong {
+    color: var(--accent);
+}
+
+/* ========= POVOS EM DESTAQUE ========= */
+.featured-peoples {
+    margin-top: 40px;
+}
+
+.peoples-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin-top: 20px;
+}
+
+.people-card {
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.people-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.people-header {
+    position: relative;
+    height: 180px;
+    overflow: hidden;
+}
+
+.people-header img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.people-card:hover .people-header img {
+    transform: scale(1.05);
+}
+
+.people-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: white;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.people-badge.norte-ma { background: rgba(39, 174, 96, 0.8); }
+.people-badge.oeste-ma { background: rgba(231, 76, 60, 0.8); }
+.people-badge.centro-ma { background: rgba(243, 156, 18, 0.8); }
+.people-badge.leste-ma { background: rgba(52, 152, 219, 0.8); }
+.people-badge.sul-ma { background: rgba(155, 89, 182, 0.8); }
+
+.people-info {
+    padding: 20px;
+}
+
+.people-info h3 {
+    color: var(--accent);
+    margin-bottom: 8px;
+    font-size: 1.3rem;
+}
+
+.people-language {
+    color: var(--accent);
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+    opacity: 0.9;
+}
+
+.people-info p {
+    color: var(--text);
+    opacity: 0.9;
+    margin-bottom: 16px;
+    line-height: 1.5;
+}
+
+.people-link {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: gap 0.3s ease;
+}
+
+.people-link:hover {
+    gap: 12px;
+}
+
+/* ========= FOOTER ESPECÍFICO ========= */
+.btn-contribute {
+    display: inline-block;
+    padding: 10px 20px;
+    background: rgba(255, 213, 79, 0.2);
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-contribute:hover {
+    background: rgba(255, 213, 79, 0.3);
+    transform: translateY(-2px);
+}
+
+/* ========= RESPONSIVIDADE ========= */
+@media (max-width: 768px) {
+    .hero-ma {
+        min-height: 70vh;
+    }
+    
+    .hero-actions {
+        flex-direction: column;
+    }
+    
+    .hero-actions .btn {
+        width: 100%;
+    }
+    
+    .peoples-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .map-info-bar {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+/* ========= ANIMAÇÕES ========= */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.region-link:hover .region {
+    animation: pulse 2s infinite;
+}
+
+/* ========= LOADING DO MAPA ========= */
+.map-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: var(--accent);
+    font-size: 1.2rem;
+    gap: 12px;
+}
+
+.map-loading i {
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

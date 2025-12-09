@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mapa Interativo - Centro do Maranhão</title>
+    <link rel="stylesheet" href="/css/globalyara.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar glass">
+        <div class="brand">
+            <img src="imagens/yara94.png" alt="Logo Yarã" class="logo">
+            <span class="brand-name">Projeto YARÃ</span>
+        </div>
+        <nav class="menu">
+            <a href="/home page/yara.html"><i class="fas fa-home"></i> Home</a>
+            <a href="/mapa do maranhão yarã/index.html" class="active"><i class="fas fa-language"></i> Línguas</a>
+            <a href="tradutor.html"><i class="fas fa-exchange-alt"></i> Tradutor</a>
+            <a href="pesquisa.html"><i class="fas fa-search"></i> Pesquisa</a>
+            <a href="quem-somos.html"><i class="fas fa-users"></i> Quem Somos</a>
+        </nav>
+        <button class="menu-toggle" aria-label="Menu">
+            <i class="fas fa-bars"></i>
+        </button>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content glass">
+            <h1><i class="fas fa-mountain"></i> Região Centro do Maranhão</h1>
+            <p>Descubra as línguas indígenas do coração do Maranhão, onde cerrados e veredas abrigam comunidades ancestrais.</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">15</span>
+                    <span class="stat-label">Línguas</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">22</span>
+                    <span class="stat-label">Comunidades</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">12.300</span>
+                    <span class="stat-label">Falantes</span>
+                </div>
+            </div>
+            <button class="btn" id="explore-map">
+                <i class="fas fa-play"></i> Explorar Região
+            </button>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <main class="container">
+        
+        <!-- MAP SECTION -->
+        <section class="map-section">
+            <h2 class="section-title"><i class="fas fa-map-marked-alt"></i> Mapa da Região Centro</h2>
+            <div class="map-container glass">
+                <div class="map-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 214000 279400" class="mapa-brasil">
+                         <!-- Centro-Oeste -->
+                        <a href="centro-oeste.html" class="region-link" data-region="centro-oeste">
+                            <path id="centro-oeste" class="region centro-oeste" d="M63343 147717l-25 -106 74 -317 14 -81 -2 -18 -42 -272 -18 -70 -172 -245 414 -256 -13 -281 -118 -140 -91 -95 -63 -66 -149 -89 -21 -25 -15 -61 11 -148 -12 -143 -56 -243 0 -8 46 -95 185 -202 28 -218 -7 -48 89 -133 -3 -21 -22 -53 -14 -24 -16 -137 -16 -14 -13 -6 -4 -19 94 -157 14 -41 -5 -48 31 -23 23 -12 6 -9 -8 -44 45 20 47 -6 7 -2 34 -34 27 -16 59 -4 10 0 119 -48 6 -26 14 -11 29 -44 110 -69 49 -232 8 -23 -2 -13 -9 -27 0 -68 11 -10 15 3 29 -2 1 -58 23 -55 44 -30 16 -222 21 -34 34 -31 16 -9 109 -81 44 -64 269 -180 -63 -226 90 -169 11 -68 58 -104 33 -193 18 -23 3 -65 17 -13 29 -14 39 -10 47 -45 62 4 69 -35 102 -25 27 -2 48 9 118 122 387 -150 14 3 59 -7 150 -28 57 57 62 87 222 338 2 24 63 78 284 130 323 -219 50 2 7 -4 17 -33 46 -25 436 -212 88 -31 149 53 132 110 143 -36 49 13 4 -2 37 -58 56 -16 67 -11 114 -29 17 -9 14 -15 1 -8 93 -228 430 -77 131 -19 5 -3 -28 -154 90 -13 87 58 96 -23 50 37 240 98 297 -68 -13 -25 -6 -8 473 17 158 187 275 -129 442 136 165 -45 132 42 70 28 18 5 174 293 283 -162 310 86 55 -15 65 1 25 1 45 -22 178 -64 39 -93 -11 -28 77 -146 206 84 79 -240 178 -153 26 -17 56 -66 420 -51 85 79 181 -94 70 23 6 4 182 11 0 -148 213 -66 126 -155 53 -82 18 -23 13 -1 65 -165 138 -51 79 -73 22 -35 179 -569 302 -118 526 125 92 -272 323 -49 65 -319 274 -11 387 -182 128 -253 392 -127 412 -438 374 -70 141 46 8 11 422 109 83 -345 -108 -397 132 -153 33 -12 138 -38 250 -100 15 -4 46 43 123 49 78 -6 -584 -1318 -2152 -4909 -666 -1389 -429 -941 152 -261 65 -188 269 -322 271 -155 234 -1258 466 -406 197 -88 26 -23 81 -109 7 -86 59 -335 299 -286 1085 -945 514 -257 88 -141 574 -1081 112 -456 420 -451 470 -195 365 7 340 39 685 -269 138 -162 145 -240 296 -271 13 -20 710 -643 213 -581 105 -117 52 -189 38 -46 221 -105 150 -238 55 -286 421 -367 -58 -270 13 -135 22 -129 227 -315 58 -135 45 -80 23 -56 6 -96 114 -742 -89 -202 -92 -150 -19 -15 -284 -490 -35 -929 -117 -246 46 -482 -166 -577 217 -659 612 -874 211 23 231 180 136 482 372 -67 242 -263 254 -738 -34 -371 123 -169 466 534 76 180 319 16 256 437 211 -36 78 147 221 39 959 726 332 131 260 214 31 296 567 136 490 491 333 -20 392 202 224 407 -187 499 121 240 -88 2 -513 -35 2 235 191 339 9083 244 195 204 -170 14 0 195 -52 -94 -294 -31 -80 -125 -62 118 -24 -105 -395 -11 -281 616 -295 31 -55 129 -373 3 -52 239 -130 14 -191 341 83 166 -323 108 -10 233 118 24 -131 372 -367 389 22 149 -190 247 -337 107 -79 154 58 128 -203 166 9415 1830 535 -739 140 13 422 -336 91 -105 349 -89 580 -363 421 -28 1730 -41 438 -147 172 -360 223 -320 1751 -901 109 -230 -58 -371 319 -612 -169 -582 160 -983 -99 -604 83 -527 235 -541 -311 -647 210 -680 0 -317 -153 -359 -89 -278 -160 -591 -24 -89 -97 -414 -1098 -1243 -184 -357 69 -234 776 -1015 131 -415 58 -743 304 -1378 -155 -224 -11 -27 -220 -294 -53 -179 -51 -57 -127 0 -441 -110 -130 69 -9 10 -65 -8 -28 -24 -17 -40 -13 -67 0 -103 14 -116 -11 -146 18 -88 -54 -65 -5 -13 -18 -86 -94 -179 -846 -173 -28 -19 -7 -7 -161 -122 -73 -249 1 -21 11 -28 -27 -189 325 -495 -140 -156 -9 -181 191 -195 -26 -241 295 -526 99 -85 28 -42 -3575 -2047 -3696 -2069 -53 20 -49 -67 74 -61 -48 -56 -54 -105 13 -88 6 -21 -84 -139 123 27 298 -419 -18 -60 -28 -41 11 -136 241 44 24 -65 11 -76 46 19 69 -171 97 -115 11 -11 114 -21 45 -181 -24 -77 -38 -44 -71 -102 133 -43 127 -323 39 -75 -9 -20 -23 -112 53 -76 116 35 10 -4 48 -50 15 -52 5 -6 38 -40 76 -99 -92 -222 100 -159 15 -75 -281 -197 44 -100 -7 -40 18 -50 122 -201 25 -107 4 -11 174 -293 -10 -105 12 2 90 -2 32 -36 4 -49 63 -48 39 -66 108 -98 19 -58 4 -21 -15 -25 -47 -103 -155 -46 6 -177 -269 -137 128 -293 -59 -295 -39 -82 30 -132 -260 -210 -49 -56 -102 -141 190 -314 -109 -164 71 -333 -97 -94 -108 -123 101 -100 57 -73 157 -158 42 -259 -186 -191 -461 37 -49 -298 -58 -88 -14 -69 113 -97 -107 -206 75 -137 -114 -105 10 -28 -45 -362 292 37 73 -57 -86 -81 162 -228 13 -10 -52 -124 47 2 51 -60 166 -114 151 -153 147 -299 -29 -190 285 -375 254 -6 102 120 146 -146 184 -49 256 -56 128 142 179 -29 430 -443 176 22 27 -24 55 -40 123 -168 26 5 74 -17 23 -49 126 -60 69 60 281 328 216 -125 -50 -183 176 -72 221 141 -51 -88 334 -366 -75 -139 298 -133 390 -350 118 -309 79 8 120 43 190 -152 169 168 425 414 258 62 60 -53 -135 -90 131 -11 7 -143 144 65 -79 -150 113 4 47 -185 80 -22 104 204 86 -152 19 99 71 -16 22 -310 280 -48 -139 -179 495 82 153 -212 271 211 -5 179 64 -29 33 -145 137 174 1243 2057 1987 3603 -1987 368 -588 237 3008 1415 2140 -960 -1045 -1356 7456 -1643 9 -11 23 -27 227 -206 108 135 3019 26 86 187 651 1527 -2 342 69 0 305 95 242 41 33 -4 83 2 138 39 19 10 234 72 80 -19 52 -5 49 3 87 183 23 -8 23 -18 279 -11 174 178 3 -1 -5 -41 23 -331 -91 -208 119 2 -66 -74 -15 -1 -96 -43 0 -5 26 -18 146 -10 -10 -119 126 -120 493 -306 67 -195 60 -233 81 -6 128 -141 569 -310 -27 -138 145 -65 32 -161 76 -52 20 -10 5 -23 891 452 -41 110 137 392 -235 209 -74 216 -327 -62 -57 137 160 290 -157 79 -243 374 -402 124 -65 279 128 91 75 87 34 188 -127 239 229 167 45 286 -120 178 -489 231 -244 283 73 79 -193 174 85 444 -62 149 -322 245 -97 69 -157 134 -46 244 10 115 265 326 -80 560 -1767 -5 137 44 -52 157 137 165 -83 1 41 255 -80 97 199 142 36 213 214 89 -35 66 -635 37 -114 2 -458 6 119 1813 278 3276 1942 473 302 -90 -807 2826 -208 1902 2418 2249 -14 53 -1 61 -137 309 -223 190 -260 -62 -331 170 -198 419 18 226 -101 92 -154 -123 -563 359 142 334 -22 286 176 344 -55 210 286 243 -35 21 -1515 906 289 237 321 320 317 142 91 162 268 509 418 174 191 269 231 50 57 141 189 36 103 171 324 186 138 569 -83 237 854 717 6 54 11 239 -83 115 -500 21 -74 84 -459 834 77 478 1490 491 318 75 776 -40 37 246 50 119 230 -10 122 -313 316 -236 69 -23 131 2 118 44 77 3 175 41 19 6 159 -39 265 -722 102 -48 72 3 60 28 109 -45 61 -46 15 2 217 4 85 275 182 38 31 21 31 15 248 276 -117 333 93 -17 109 -48 517 -120 229 180 500 -284 215 242 -179 261 143 58 -163 139 34 165 23 21 -37 40 33 39 -84 -13 -44 -37 -58 -15 -145 139 -13 155 -251 207 -84 30 -13 3 -79 257 54 121 289 -38 374 212 200 -19 41 34 32 218 7 20 35 69 63 200 143 0 208 -64 296 89 209 -116 98 95 166 96 56 37 6 19 78 90 209 -168 219 -4 410 -389 405 69 265 381 89 129 626 381 107 598 247 300 276 12 160 245 -1242 3306 -413 71 6762 3108 -89 70 -223 40 -99 51 -92 158 -34 14 -83 -3 -8 -3 -319 -10 -174 98 -16 18 -32 63 9 49 -25 25 -59 -28 -115 -20 -97 130 -86 39 -77 -34 -59 73 -76 24 -137 -43 -46 8 -23 39 -27 53 -80 4 -31 4 -3 50 -44 31 -21 35 -23 77 -21 9 -234 351 -77 -19 -6 28 -1 3 -267 295 -94 281 116 133 -107 151 53 328 -6 55 12 48 82 37 -10 47 67 86 -127 291 37 44 -83 32 -16 34 70 286 182 171 36 128 19 8 206 517 75 65 87 176 -49 192 -353 423 146 188 153 777 -84 76 -1 72 49 311 23 31 58 49 91 66 168 372 268 147 440 122 314 345 -2 37 -95 78 -35 105 -2 5 -116 246 -362 276 -74 -36 -179 243 -219 21 -104 115 -222 3 -44 153 -46 -72 -55 100 -269 13 -168 147 -171 578 -81 17 68 741 -110 67 -44 276 -365 86 -226 362 -359 305 -116 362 -371 345 -90 274 -567 428 -252 537 -305 34 -125 153 -177 39 -14 215 -293 153 -153 -26 -396 298 -124 598 -296 51 -510 311 38 52 -427 292 -31 12 -50 23 -235 20 -6 37 -23 -18 -235 90 -4 10 -23 27 55 215 16 49 -18 47 -5 29 18 6 13 -10 8 5 37 144 8 16 -3 3 -4123 -2209 -122 177 -567 -49 -102 68 -37 166 -16 88 -185 84 -384 605 -708 -26 -299 -240 -401 159 -75 12 -215 -2 -56 -55 -323 318 131 177 434 1138 -64 194 -984 269 -137 -40 -400 255 -187 -87 -226 118 -407 -541 -192 -25 -126 95 -215 107 -67 20 -40 -30 -62 -58 -35 -28 -609 13 -22 -10 -35 -22 -166 -33 -51 60 -530 200 -54 51 -14 20 -86 85 -110 -66 -45 -365 -24 -26 -87 -67 -71 -84 -365 -7 -150 -208 -232 -67 -49 -218 -146 -99 -16 -64 -33 -336 -96 -10 -44 33 -109 92 -360 104 -825 27 -340 1 2 933 15 4542 -485 342 -492 -39 -82 61 36 276 -283 -46 48 -123 -129 -8 -503 446 -269 -95 -261 81 -199 115 -172 288 -475 166 -164 30 -291 413 -285 220 -384 91 -376 -138 -145 109 -22 365 -787 343 -40 29 -39 28 -92 26 -118 138 -6 12 -163 5 -308 538 -332 52 -400 205 -156 199 -73 83 -93 43 -23 -37 -41 -25 -56 14 -45 -89 -84 -37 -150 187 89 102 16 37 45 29 42 92 4 245 -118 -3 -183 581 -39 60 -215 223 -187 -45 -6 490 -237 427 22 161 -308 324 5 327 -171 126 -39 99 -30 493 -334 224 -129 392 -383 281 -45 327 -168 -74 -144 109 -68 38 -269 110 -29 5 -57 3 -68 43 -62 57 -154 163 -202 -71 -355 95 -327 -98 -293 6 -11 -6 -119 -11 -449 -123 -176 174 -60 8 -234 29 -139 -105 -210 110 -3 -362 -119 -50 183 -214 -67 -160 -384 -5 -68 -263 -200 68 -106 39 -101 117 -88 -53 -49 -45 -47 -22 -64 -111 -160 -1 -65 -55 -69 -65 -182 -139 -126 26 -117 7 9 -118 -131 -72 -7 208 -365 -183 -299 6 -274 321 -470 27 -279 174 -52 172 84 -28 21 76 -283 87 -99 -206 72 -102 -156 -76 -134 132 -71 36 -23 22 74 98 -214 38 -346 300 -82 -2 -292 72 -179 171 -106 -35 -82 -79 -238 -43 -217 5 275 322 -79 128 147 139 -507 110 -10 11 -92 247 -343 -12 -134 437 89 -2 -6 80 -54 28 -656 70 -4 87 -201 102 -2 168 -311 -36 -133 105 -175 -73 -252 145 -349 47 -106 222 -126 -56 -232 102 -85 161 -45 61 -169 -95 -87 -33 -33 -2 -425 94 -192 -210 -232 43 -261 -46 -86 71 -131 -86 -131 136 -98 -36 -23 -68 -66 -34 -189 67 -81 -34 -50 14 35 105 -191 40 -180 -171 -72 118 -211 -211 -45 -21 -60 26 -105 157 -256 90 -135 249 -794 66 -307 402 -728 -36 -183 -136 -95 28 -47 218 -28 78 -27 44 -989 324 -62 184 -457 -168 -516 192 -356 -206 -172 110 -4 0 -386 -98 -480 -70 -404 -95 -237 -43 -25 -10 -206 -111 -454 17 -231 -86 -103 144 -236 14 -51 258 -360 -2 -114 30 -122 83 -374 -30 -75 165 -93 -46 -423 372 -149 23 -416 3394 -27 3251 -1805 153 -173 -343 -314 -271 -608 -174 -376 417 -123 0 -377 -600 -648 -165 -452 32 -585 309 -578 40 -102 331 58 217 -188 206 -646 10 -285 -134 -75 267 -323 116 -394 400 -81 465 -415 -57 -242 133 -566 -73 -181 228 -75 1017 127 195 17 301 -134 247 -843 464 -824 47 -823 -243 -162 78 -55 64 -107 160 -404 -58 -166 160 121 574 -305 325 -133 10 170 264 -129 316 -26 14 -31 -3 -511 93 -221 -86 -368 118 -503 -360 -249 -626 214 -201 -231 -390 60 -424 -535 -90 -112 -96 -7 -271 -112 -47 -307 168 -387 -554 -906 -491 -44 86 -143 -28 -252 402 -329 144 -530 -253 9 -464 -159 -402 -237 -15 -243 -231 -30 -570 -208 -214 -863 -141 -392 -478 -213 -81 16 -372 -177 -3 -146 234 -179 49 -285 -279 -337 -70 -286 287 -470 151 -290 314 -859 -758 -325 -116 -352 67 -361 -85 -244 -308 -270 -139 17 -130 -248 -222 334 -208 81 -165 -66 -141 -270 -55 -251 -552 -294 -280 -59 -330 -85 -415 76 -225 201 -105 -3 -577 549 -405 20 -277 -86 -121 63 -322 440 -656 -226 -451 -65 -699 72 -351 312 -19 209 -332 18 -192 -259 -408 -15 -98 305 -427 346 -96 55 -294 411 -456 -328 -287 155 -232 -295 -57 52 -319 651 -75 -92 -243 -429 -303 -97 -263 97 -453 194 -114 278 8 171 -216 347 -62 286 -186 60 -142 14 -129 201 -115 40 -321 394 -161 96 -155 -43 -255 266 -251 -113 -408 -494 -146 -242 88 -1062 -135 -92 -1 -9 -5 -516 -395 -150 -5 2 -2 131 -244 70 -502 425 -236 243 -742 -605 -557 -555 46 -14 -339 -432 -433 399 -331 -28 -195 -502 -325 4 -142 -322 -439 147 -197 70 -480 -172 -226 -354 -133 20 -261 -208 -369 -529 -64 -212 -401 4 11z"/>
+"/>
+                           </svg> </a>   </svg>
+                    
+                    <!-- Map Controls -->
+                    <div class="map-controls">
+                        <button class="map-btn" id="zoom-in"><i class="fas fa-search-plus"></i></button>
+                        <button class="map-btn" id="zoom-out"><i class="fas fa-search-minus"></i></button>
+                        <button class="map-btn" id="reset-map"><i class="fas fa-sync-alt"></i></button>
+                    </div>
+                </div>
+                
+                <!-- Map Legend -->
+                <div class="map-legend">
+                    <div class="legend-title">Região Centro</div>
+                    <div class="legend-items">
+                        <div class="legend-item" data-region="centro">
+                            <span class="color-box" style="background: #FFB86C;"></span>
+                            <span>Centro (Ativa)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PANEL SECTION -->
+        <section class="panel-section">
+            <h2 class="section-title"><i class="fas fa-info-circle"></i> Informações da Região</h2>
+            <div class="panel-container glass">
+                <div class="panel-header">
+                    <div class="region-display">
+                        <span class="region-icon"><i class="fas fa-mountain"></i></span>
+                        <div>
+                            <h3 id="current-region">Centro do Maranhão</h3>
+                            <p id="region-subtitle">Cerrados e Chapadas</p>
+                        </div>
+                    </div>
+                    <div class="panel-actions">
+                        <button class="panel-btn" id="share-btn"><i class="fas fa-share-alt"></i></button>
+                        <button class="panel-btn" id="bookmark-btn"><i class="far fa-bookmark"></i></button>
+                    </div>
+                </div>
+                
+                <div class="panel-content" id="panel-content">
+                    <div class="welcome-content">
+                        <div class="welcome-icon">
+                            <i class="fas fa-globe-americas"></i>
+                        </div>
+                        <h4>Região Centro</h4>
+                        <p>A região central do Maranhão é caracterizada por cerrados, chapadas e veredas, onde comunidades indígenas mantêm tradições milenares. Esta área concentra grande diversidade linguística e cultural.</p>
+                        
+                        <div class="info-tips">
+                            <h5><i class="fas fa-landmark"></i> Principais Características</h5>
+                            <ul>
+                                <li><i class="fas fa-users"></i> 22 comunidades indígenas ativas</li>
+                                <li><i class="fas fa-language"></i> 15 línguas documentadas</li>
+                                <li><i class="fas fa-tree"></i> Biodiversidade do cerrado</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="panel-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-language"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-number" id="stats-languages">15</span>
+                            <span class="stat-label">Línguas Ativas</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-number" id="stats-communities">22</span>
+                            <span class="stat-label">Comunidades</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="panel-footer">
+                    <button class="btn btn-secondary" id="explore-languages">
+                        <i class="fas fa-book-open"></i> Ver Línguas da Região
+                    </button>
+                    <button class="btn" id="learn-more">
+                        <i class="fas fa-graduation-cap"></i> Aprenda Mais
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURES CARDS -->
+        <section class="features-section">
+            <h2 class="section-title"><i class="fas fa-star"></i> Recursos Disponíveis</h2>
+            <div class="containers-wrapper">
+                <div class="containers">
+                    <div class="container-box">
+                        <div class="box-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h3>Dicionários</h3>
+                        <p>Vocabulários das línguas do centro do Maranhão.</p>
+                    </div>
+                    
+                    <div class="container-box">
+                        <div class="box-icon">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <h3>Áudios</h3>
+                        <p>Gravações de falantes nativos da região.</p>
+                    </div>
+                    
+                    <div class="container-box">
+                        <div class="box-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <h3>Vídeos</h3>
+                        <p>Registros de tradições e rituais do cerrado.</p>
+                    </div>
+                    
+                    <div class="container-box">
+                        <div class="box-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <h3>Dados</h3>
+                        <p>Estatísticas e informações demográficas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer glass">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="imagens/yara94.png" alt="Logo Yarã" class="footer-logo">
+                <div>
+                    <h4>Projeto YARÃ</h4>
+                    <p>Preservando a herança linguística do Maranhão</p>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <div class="link-group">
+                    <h5>Navegação</h5>
+                    <a href="index.html">Mapa Geral</a>
+                    <a href="linguas.html">Catálogo de Línguas</a>
+                    <a href="tradutor.html">Tradutor</a>
+                </div>
+                
+                <div class="link-group">
+                    <h5>Outras Regiões</h5>
+                    <a href="regiao-litoral.html">Litoral</a>
+                    <a href="regiao-oeste.html">Oeste</a>
+                    <a href="regiao-sul.html">Sul</a>
+                    <a href="regiao-leste.html">Leste</a>
+                </div>
+                
+                <div class="link-group">
+                    <h5>Contato</h5>
+                    <a href="mailto:contato@projetoyara.org">contato@projetoyara.org</a>
+                    <a href="#">Parcerias</a>
+                    <a href="#">Contribua</a>
+                </div>
+            </div>
+            
+            <div class="footer-social">
+                <h5>Siga-nos</h5>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Projeto YARÃ. Todos os direitos reservados.</p>
+            <p>Desenvolvido com <i class="fas fa-heart" style="color: #ff6b6b;"></i> para preservar a diversidade linguística do Maranhão.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

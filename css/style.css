@@ -1,0 +1,108 @@
+/* ========= Tema híbrido ========= */
+:root{
+  --verde-floresta: #064e3b; 
+  --terra: #8d6e63;
+  --areia: #d7ccc8;
+  --accent: #ffd54f;
+  --glass-bg: rgba(255,255,255,.14);
+  --glass-border: rgba(255,255,255,.25);
+  --text: #fdfdfd;
+}
+
+/* ========= Reset ========= */
+*{box-sizing:border-box;margin:0;padding:0;}
+html, body{height:100%; font-family:'Montserrat', sans-serif; background: var(--verde-floresta); color: var(--text);}
+
+/* ========= Seção do catálogo ========= */
+.catalogo {
+  width: 100%;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.catalogo h1 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: clamp(24px, 3vw, 32px);
+  color: var(--accent);
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+.catalogo h1 .logo {
+  height: 50px;
+  width: auto;
+}
+
+/* ========= Carrossel ========= */
+.carrossel {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  padding: 0 10px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+.carrossel::-webkit-scrollbar { display: none; }
+.carrossel.active { cursor: grabbing; cursor: -webkit-grabbing; }
+
+/* ========= Cards ========= */
+.card {
+  flex: 0 0 260px;
+  border-radius: 16px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 6px 16px rgba(0,0,0,.25);
+  scroll-snap-align: start;
+  overflow: hidden;
+  transition: transform .3s, box-shadow .3s;
+  position: relative;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background-image: url('https://i.ibb.co/6NPQ4hF/pattern.png');
+  opacity: .05;
+  pointer-events: none;
+}
+.card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 24px rgba(0,0,0,.35);
+}
+.card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,.25));
+}
+
+/* ========= Info do card ========= */
+.info {
+  padding: 15px;
+  text-align: left;
+}
+.info h3 {
+  font-size: 18px;
+  margin-bottom: 6px;
+  color: var(--accent);
+  font-weight: 700;
+}
+.info p {
+  font-size: 14px;
+  color: var(--text);
+  opacity: .95;
+  margin: 4px 0;
+  line-height: 1.4;
+}
+
+/* ========= Responsividade ========= */
+@media (max-width: 768px) {
+  .card { width: 80%; margin: 0 auto; }
+  .catalogo h1 { font-size: clamp(20px, 5vw, 28px); }
+}
